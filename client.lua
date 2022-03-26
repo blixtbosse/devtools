@@ -1,4 +1,6 @@
 RegisterCommand("coords", function(source, args)
+	if not args[1] or (type(args[1]) ~= 'string') or not types[args[1]] then return end
+		
 	local playerPed = PlayerPedId()
 
 	local types = {
@@ -16,8 +18,6 @@ RegisterCommand("coords", function(source, args)
 		vehicleheading = IsPedInAnyVehicle(playerPed, false) and GetEntityHeading(GetVehiclePedIsIn(playerPed, false)) or nil,
 		vehiclerot = IsPedInAnyVehicle(playerPed, false) and GetEntityRotation(GetVehiclePedIsIn(playerPed, false)) or nil
 	}
-
-	if not args[1] or (type(args[1]) ~= 'string') or not types[args[1]] then return end
 
 	SendNUIMessage({
 		coords = tostring(types[args[1]])
