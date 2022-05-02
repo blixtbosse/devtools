@@ -25,9 +25,9 @@ end)
 function Copy(text)
     if not text or (type(text) ~= 'string') then return end
 
-	SendNUIMessage({
-        text = text
-	})
+    SendNUIMessage({
+	text = text
+    })
 end
 
 exports('Copy', Copy)
