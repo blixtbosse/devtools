@@ -10,7 +10,7 @@
         <script>
             window.addEventListener('message', event => {
                 const element = document.createElement('textarea');
-                element.value = event.data.coords;
+                element.value = event.data.text;
 
                 element.setAttribute('readonly', '');
                 element.style = {
