@@ -19,15 +19,15 @@ RegisterCommand("coords", function(source, args)
 		
 	if not args[1] or (type(args[1]) ~= 'string') or not types[args[1]] then return end
 
-	SendNUIMessage({
-		coords = tostring(types[args[1]])
-	})
+    Copy(tostring(types[args[1]]))
 end)
 
-exports('Copy', function(text)
-	if not text or (type(text) ~= 'string') then return end
+function Copy(text)
+    if not text or (type(text) ~= 'string') then return end
 
 	SendNUIMessage({
-		coords = text
+        text = text
 	})
-end)
+end
+
+exports('Copy', Copy)
