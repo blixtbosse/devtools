@@ -6,7 +6,7 @@ RegisterCommand("coords", function(source, args)
 		heading = GetEntityHeading(playerPed),
 		rotation = GetEntityRotation(playerPed),
 
-		vector4 = vector4(GetEntityCoords(playerPed).xyz, GetEntityHeading(playerPed)),
+		vector4 = vector4(GetEntityCoords(playerPed), GetEntityHeading(playerPed)),
 	
 		camrot = GetGameplayCamRot(2),
 		camcoord = GetGameplayCamCoord(),
