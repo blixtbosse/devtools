@@ -98,6 +98,6 @@ RegisterCommand("coords", function(source, args)
     Devtools:copy(tostring(option))
 end)
 
-exports('Copy', function()
-	Devtools:copy()
+exports('Copy', function(...)
+	Devtools:copy(...)
 end)
