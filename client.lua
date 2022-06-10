@@ -61,7 +61,7 @@ function Devtools:getType(option)
 		rotation = GetEntityRotation(playerPed),
 
 		vector4 = vector4(GetEntityCoords(playerPed), GetEntityHeading(playerPed)),
-	
+
 		camrot = GetGameplayCamRot(2),
 		camcoord = GetGameplayCamCoord(),
 		camfov = GetGameplayCamFov(),
@@ -95,7 +95,7 @@ RegisterCommand("coords", function(source, args)
 	
 	local option = Devtools:getType(args[1])
 
-    Devtools:copy(tostring(option))
+    	Devtools:copy(tostring(option))
 end)
 
 exports('Copy', function(...)
