@@ -50,7 +50,7 @@ Citizen.CreateThread(function()
 	end
 end)
 
-function Devtools:getOption()
+function Devtools:getType(option)
 	local playerPed = PlayerPedId()
 
 	if not DoesEntityExist(playerPed) then return end
@@ -71,7 +71,7 @@ function Devtools:getOption()
 		vehiclerot = IsPedInAnyVehicle(playerPed, false) and GetEntityRotation(GetVehiclePedIsIn(playerPed, false)) or nil
 	}
 
-	if not types[option] then return end
+	if (types[option] == nil) then return end
 
 	return types[option]
 end
@@ -93,9 +93,9 @@ end)
 RegisterCommand("coords", function(source, args)		
 	if not args[1] or (type(args[1]) ~= 'string') then return end
 	
-	local option = getType(args[1])
+	local option = Devtools:getType(args[1])
 
-    Devtools:copy(option)
+    Devtools:copy(tostring(option))
 end)
 
 exports('Copy', function()
